@@ -34,6 +34,9 @@ android {
     viewBinding{
         enabled = true
     }
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions.jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -51,4 +54,19 @@ dependencies {
     implementation "androidx.room:room-ktx:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"
 
+    //-----------------------------corrutinas-----------------------------------------------------
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC'
+
+//-------------------------------lifecicle------------------------------------------------------
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
+
+//------------------------------viewModel---------------------------------------------------
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+
+//--------------------------------liveData----------------------------------------------------
+
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-rc01"
 }
